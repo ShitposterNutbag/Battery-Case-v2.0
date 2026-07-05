@@ -1,6 +1,6 @@
-include <../parameters/project.scad>
-include <../parameters/electronics.scad>
-use <common.scad>
+include <scad/parameters/project.scad>
+include <scad/parameters/electronics.scad>
+use <scad/components/common.scad>
 
 module led_pcb_placeholder() {
     // Verified board envelope: led_pcb_length x led_pcb_width x led_pcb_thickness_nominal.

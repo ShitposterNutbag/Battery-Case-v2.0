@@ -1,12 +1,12 @@
-include <../parameters/project.scad>
-include <../parameters/enclosure.scad>
-use <../components/common.scad>
-use <../components/battery_holder.scad>
-use <../components/main_pcb.scad>
-use <../components/led_pcb.scad>
-use <../components/usb_board.scad>
-use <../components/enclosure.scad>
-use <../components/lid.scad>
+include <scad/parameters/project.scad>
+include <scad/parameters/enclosure.scad>
+use <scad/components/common.scad>
+use <scad/components/battery_holder.scad>
+use <scad/components/main_pcb.scad>
+use <scad/components/led_pcb.scad>
+use <scad/components/usb_board.scad>
+use <scad/components/enclosure.scad>
+use <scad/components/lid.scad>
 
 // Layout orientation helpers only. These rotate component reference models into
 // the measured assembly relationship without creating final mounting geometry.

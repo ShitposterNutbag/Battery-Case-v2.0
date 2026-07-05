@@ -1,6 +1,6 @@
-include <../parameters/project.scad>
-include <../parameters/electronics.scad>
-use <common.scad>
+include <scad/parameters/project.scad>
+include <scad/parameters/electronics.scad>
+use <scad/components/common.scad>
 
 module usb_board_placeholder() {
     rounded_plate_placeholder(usb_board_size, usb_board_corner_radius, color_usb_board, 0.85);

@@ -1,6 +1,6 @@
-include <../parameters/project.scad>
-include <../parameters/battery.scad>
-use <common.scad>
+include <scad/parameters/project.scad>
+include <scad/parameters/battery.scad>
+use <scad/components/common.scad>
 
 module battery_cell_placeholder() {
     color(color_reference, placeholder_alpha)

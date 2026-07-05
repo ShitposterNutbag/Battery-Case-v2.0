@@ -1,6 +1,6 @@
-include <../parameters/project.scad>
-include <../parameters/electronics.scad>
-use <common.scad>
+include <scad/parameters/project.scad>
+include <scad/parameters/electronics.scad>
+use <scad/components/common.scad>
 
 module main_pcb_placeholder() {
     // Verified board envelope: main_pcb_length x main_pcb_width x pcb_thickness_nominal.

@@ -1,7 +1,7 @@
 // Enclosure and lid planning parameters.
 // The enclosure is intentionally not designed yet; these values support placeholder assembly only.
-include <battery.scad>
-include <electronics.scad>
+include <scad/parameters/battery.scad>
+include <scad/parameters/electronics.scad>
 
 enclosure_placeholder_size = [118, 82, 34];
 enclosure_wall_nominal = 2.4;
