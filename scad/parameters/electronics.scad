@@ -47,14 +47,15 @@ control_button_diameter = 2.9;
 control_button_height_above_pcb = 6.0;
 control_button_near_edge_from_board_edge = 19.2;
 control_button_far_edge_from_board_edge = 34.9;
-control_button_center_from_board_edge = (control_button_near_edge_from_board_edge + control_button_far_edge_from_board_edge) / 2;
+// Calculated midpoint for reference rendering only; not a verified final button center.
+control_button_center_approx_from_board_edge = (control_button_near_edge_from_board_edge + control_button_far_edge_from_board_edge) / 2;
 led_array_total_length = 14.1;
 individual_led_width = 3.0;
 top_of_board_to_bottom_of_led_package = 13.8;
 top_of_board_to_bottom_edge_of_board = 20.8;
 
-// Placeholder LED reference assumptions: four packages centered on the verified array span.
-led_count = 4;
+// Verified three-LED array count; packages are centered across the verified outer array span.
+led_count = 3;
 led_package_height_placeholder = 3.0;
 led_spacing = (led_array_total_length - individual_led_width) / (led_count - 1);
 

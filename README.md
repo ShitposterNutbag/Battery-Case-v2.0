@@ -35,8 +35,8 @@ The OpenSCAD scaffold now uses verified engineering notebook dimensions for the 
 ### LED/control PCB
 
 - Board envelope: 55.1 mm length × 20.8 mm width × 2.0 mm nominal thickness.
-- Control button reference: 2.9 mm diameter, 6.0 mm above PCB, with near/far edge measurements of 19.2 mm / 34.9 mm from the measured board edge.
-- LED array reference: 14.1 mm total length, 3.0 mm individual LED width, and 13.8 mm from top of board to bottom of LED package.
+- Control button reference: 2.9 mm diameter, 6.0 mm above PCB, with verified near/far edge measurements of 19.2 mm / 34.9 mm from the measured board edge; any rendered midpoint is calculated for approximate reference only.
+- Three-LED array reference: 14.1 mm verified total array length across 3 LEDs, 3.0 mm individual LED width, and 13.8 mm from top of board to bottom of LED package.
 
 ## Preview
 
