@@ -6,13 +6,9 @@ module main_pcb_placeholder() {
     // Verified board envelope: main_pcb_length x main_pcb_width x pcb_thickness_nominal.
     rounded_plate_placeholder(main_pcb_size, main_pcb_corner_radius, color_main_pcb, 0.8);
 
-    // Placeholder standoffs only; these are not final rails, bosses, or mounting features.
-    for (x = [-1, 1], y = [-1, 1])
-        translate([x * (main_pcb_size[0] / 2 - 7), y * (main_pcb_size[1] / 2 - 7), -main_pcb_standoff_height / 2])
-            color("black", 0.5)
-                cylinder(h = main_pcb_standoff_height, d = main_pcb_standoff_diameter, center = true, $fn = 24);
+    // No mounting features are modeled in the frozen reference assembly.
 
-    // Verified power button diameter and height; Y placement is a placeholder reference.
+    // Verified power button diameter/height and measured edge location.
     translate([
         -main_pcb_length / 2 + power_button_center_from_board_edge,
         power_button_placeholder_y,

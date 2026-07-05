@@ -2,15 +2,15 @@
 // Verified engineering notebook measurements are labeled below.
 // USB board values remain placeholders because final USB measurements are not verified yet.
 
-// Verified main PCB / power board dimensions.
-main_pcb_length = 97.0;
-main_pcb_width = 49.8;
+// Verified main PCB / power board dimensions for the physical pack reference.
+main_pcb_length = 55.1;
+main_pcb_width = 20.8;
 pcb_thickness_nominal = 2.0;
 main_pcb_size = [main_pcb_length, main_pcb_width, pcb_thickness_nominal];
 
 // Placeholder main PCB visualization/mounting values; not final case features.
-main_pcb_corner_radius = 3;
-main_pcb_standoff_height = 6;
+main_pcb_corner_radius = 2;
+main_pcb_standoff_height = 0;
 main_pcb_standoff_diameter = 5;
 main_pcb_mount_hole_diameter = 2.6;
 
@@ -24,21 +24,21 @@ power_button_near_edge_from_board_edge = 41.0;
 power_button_center_from_board_edge = 43.95;
 power_button_far_edge_from_board_edge = 46.9;
 
-// Placeholder locations for visible references where only feature size was verified.
-dc_jack_placeholder_depth = 10.0;
-dc_jack_placeholder_x = -main_pcb_length / 2;
+// Reference locations for visible features in the measured assembly preview.
+dc_jack_placeholder_depth = 8.0;
+dc_jack_placeholder_x = -main_pcb_length / 2 + dc_jack_placeholder_depth / 2;
 dc_jack_placeholder_y = 0;
 power_button_placeholder_y = 0;
 
-// Verified LED/control PCB dimensions.
-led_pcb_length = 55.1;
+// Verified LED/control PCB dimensions for the physical pack reference.
+led_pcb_length = 29.0;
 led_pcb_width = 20.8;
 led_pcb_thickness_nominal = 2.0;
 led_pcb_size = [led_pcb_length, led_pcb_width, led_pcb_thickness_nominal];
 
 // Placeholder LED PCB visualization/mounting values; not final case features.
 led_pcb_corner_radius = 2;
-led_pcb_standoff_height = 4;
+led_pcb_standoff_height = 0;
 led_pcb_standoff_diameter = 4;
 led_pcb_mount_hole_diameter = 2.2;
 
@@ -47,8 +47,8 @@ control_button_diameter = 2.9;
 control_button_height_above_pcb = 6.0;
 control_button_near_edge_from_board_edge = 19.2;
 control_button_far_edge_from_board_edge = 34.9;
-// Calculated midpoint for reference rendering only; not a verified final button center.
-control_button_center_approx_from_board_edge = (control_button_near_edge_from_board_edge + control_button_far_edge_from_board_edge) / 2;
+// Calculated midpoint for reference rendering only; clamped to the smaller board.
+control_button_center_approx_from_board_edge = min((control_button_near_edge_from_board_edge + control_button_far_edge_from_board_edge) / 2, led_pcb_length - 4);
 led_array_total_length = 14.1;
 individual_led_width = 3.0;
 top_of_board_to_bottom_of_led_package = 13.8;
@@ -62,9 +62,12 @@ led_spacing = (led_array_total_length - individual_led_width) / (led_count - 1);
 // Placeholder USB board and connector reference geometry; unverified.
 usb_board_size = [28, 18, 1.6];
 usb_board_corner_radius = 2;
-usb_board_standoff_height = 4;
+usb_board_standoff_height = 0;
 usb_board_standoff_diameter = 4;
 usb_board_mount_hole_diameter = 2.2;
 usb_connector_width = 9;
 usb_connector_depth = 7;
 usb_connector_height = 3.5;
+
+// Approximate measured/reference spacing between boards and battery envelope.
+board_to_battery_gap = 1.0;

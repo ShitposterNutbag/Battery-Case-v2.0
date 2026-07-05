@@ -20,34 +20,35 @@ lid_screw_diameter_placeholder = 3;
 //
 // These positions are only for measured-component layout previews. They do not
 // define shell cutouts, rails, screw bosses, lid clips, or exterior styling.
-layout_side_clearance = 2.0;
-layout_unverified_usb_offset = 22.0;
+layout_board_gap = board_to_battery_gap;
+layout_ribbon_width = 8.0;
+layout_ribbon_thickness = 0.6;
 
 // Battery pack remains centered as the assembly datum.
 battery_holder_position = [0, 0, 0];
 
-// Main PCB/power board reference: placed on the +X long side of the battery,
-// with its component side rotated outward so the DC jack and power button face +X.
+// Main PCB/power board reference: placed at the -Y end of the battery pack,
+// with its component side rotated outward so the DC jack and power button face -Y.
 main_pcb_position = [
-    battery_pack_width / 2 + layout_side_clearance + pcb_thickness_nominal / 2,
     0,
+    -battery_pack_length / 2 - layout_board_gap - pcb_thickness_nominal / 2,
     0
 ];
 
-// LED/control PCB reference: placed on the -X long side of the battery,
-// with its LED array side rotated outward so the LEDs face -X.
+// LED/control PCB reference: placed at the +Y end of the battery pack,
+// with its LED array side rotated outward so the LEDs face +Y.
 led_pcb_position = [
-    -battery_pack_width / 2 - layout_side_clearance - led_pcb_thickness_nominal / 2,
     0,
+    battery_pack_length / 2 + layout_board_gap + led_pcb_thickness_nominal / 2,
     0
 ];
 
-// USB board remains an unverified placeholder, intentionally parked off to the
-// side of the measured assembly relationship until its real placement is known.
+// USB charging board remains a size placeholder, but is shown at the same -Y
+// end as the charging electronics with the port facing outward.
 usb_board_position = [
-    battery_pack_width / 2 + layout_side_clearance + pcb_thickness_nominal + layout_unverified_usb_offset + usb_board_size[0] / 2,
     0,
-    0
+    -battery_pack_length / 2 - layout_board_gap - pcb_thickness_nominal - layout_board_gap - usb_board_size[1] / 2,
+    -battery_pack_total_height_with_boards / 2 + 8
 ];
 
 // Lid/enclosure placeholders remain centered on the battery datum for context only.
