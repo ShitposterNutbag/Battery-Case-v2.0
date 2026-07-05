@@ -1,22 +1,34 @@
 // Battery pack and holder parameters.
-// Defaults describe a 6-cell cylindrical-cell layout scaffold, not final design geometry.
+// Verified engineering notebook measurements are labeled below.
+// Remaining cylindrical-cell details are placeholders for reference visualization only.
 
-cell_count = 6;
+// Verified battery assembly envelope.
+battery_pack_length = 68.2;
+battery_pack_width = 64.2;
+battery_pack_total_height_with_boards = 45.9;
+battery_cell_count = 6;
+
+// Verified scaffold layout: two rows of three cells.
+battery_layout_rows = 2;
+battery_layout_columns = 3;
+cell_count = battery_cell_count;
+cell_columns = battery_layout_columns;
+cell_rows = battery_layout_rows;
+
+// Placeholder individual-cell reference dimensions/spacing; pack envelope above is verified.
 cell_diameter = 18.5;
 cell_length = 65.5;
-cell_spacing = 20.5;
 cell_clearance = 0.5;
+cell_spacing_x = battery_pack_width / cell_columns;
+cell_spacing_z = cell_diameter;
+cell_spacing = cell_spacing_x;
 
-// Scaffold layout: two rows of three cells.
-cell_columns = 3;
-cell_rows = 2;
-
-battery_holder_wall = 2.0;
-battery_holder_floor = 2.0;
-battery_holder_height = cell_diameter + battery_holder_floor + 4.0;
-
+// Placeholder holder block uses verified assembly envelope until final holder geometry is designed.
+battery_holder_wall = 0;
+battery_holder_floor = 0;
+battery_holder_height = battery_pack_total_height_with_boards;
 battery_holder_size = [
-    (cell_columns - 1) * cell_spacing + cell_diameter + 2 * battery_holder_wall,
-    cell_length + 2 * battery_holder_wall,
-    battery_holder_height
+    battery_pack_width,
+    battery_pack_length,
+    battery_pack_total_height_with_boards
 ];
