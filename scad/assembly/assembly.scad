@@ -8,6 +8,28 @@ use <../components/usb_board.scad>
 use <../components/enclosure.scad>
 use <../components/lid.scad>
 
+// Layout orientation helpers only. These rotate component reference models into
+// the measured assembly relationship without creating final mounting geometry.
+module main_pcb_layout_reference() {
+    // Local PCB +Z/component side maps to global +X, so DC jack/button face outward.
+    multmatrix([
+        [0, 0, 1, 0],
+        [1, 0, 0, 0],
+        [0, 1, 0, 0],
+        [0, 0, 0, 1]
+    ]) main_pcb();
+}
+
+module led_pcb_layout_reference() {
+    // Local PCB +Z/component side maps to global -X, so LED array faces outward.
+    multmatrix([
+        [0, 0, -1, 0],
+        [1, 0, 0, 0],
+        [0, -1, 0, 0],
+        [0, 0, 0, 1]
+    ]) led_pcb();
+}
+
 module assembly_scaffold() {
     if (show_axes)
         reference_axes(35);
@@ -19,10 +41,10 @@ module assembly_scaffold() {
             battery_holder();
 
         translate(main_pcb_position)
-            main_pcb();
+            main_pcb_layout_reference();
 
         translate(led_pcb_position)
-            led_pcb();
+            led_pcb_layout_reference();
 
         translate(usb_board_position)
             usb_board();

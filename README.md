@@ -38,6 +38,27 @@ The OpenSCAD scaffold now uses verified engineering notebook dimensions for the 
 - Control button reference: 2.9 mm diameter, 6.0 mm above PCB, with verified near/far edge measurements of 19.2 mm / 34.9 mm from the measured board edge; any rendered midpoint is calculated for approximate reference only.
 - Three-LED array reference: 14.1 mm verified total array length across 3 LEDs, 3.0 mm individual LED width, and 13.8 mm from top of board to bottom of LED package.
 
+
+## Assembly Layout
+
+`scad/assembly/assembly.scad` is a measured-component layout preview only. It shows the intended relationship between the verified battery pack, main PCB/power board, LED/control PCB, and an unverified USB placeholder; it is not final enclosure or mounting geometry.
+
+Coordinate system used by `scad/parameters/enclosure.scad`:
+
+- **X** = left/right across the battery pack width.
+- **Y** = battery pack length direction.
+- **Z** = battery pack height/thickness direction.
+- **Origin** = center of the verified battery pack envelope.
+
+Reference positions in the assembly preview:
+
+- The battery pack/holder placeholder is centered at the origin and remains the assembly datum.
+- The main PCB/power board is placed on the **+X long side** of the battery pack. Its component side is oriented outward so the DC jack and power button face away from the battery pack.
+- The LED/control PCB is placed on the **-X long side** of the battery pack. Its component side is oriented outward so the LED array faces away from the battery pack.
+- The USB board remains an unverified placeholder and is intentionally parked farther off to the +X side until its physical placement is measured.
+
+The enclosure and lid are still placeholders only. This layout does not add or imply shell cutouts, rails, screw bosses, lid clips, exterior styling, or final mount geometry.
+
 ## Preview
 
 Open `scad/assembly/assembly.scad` in OpenSCAD to inspect the placeholder assembly.
