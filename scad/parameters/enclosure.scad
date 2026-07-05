@@ -14,4 +14,5 @@ lid_screw_diameter_placeholder = 3;
 battery_holder_position = [0, -8, 4];
 main_pcb_position = [0, 24, 18];
 led_pcb_position = [0, -36, 20];
+usb_board_position = [42, 0, 18];
 lid_position = [0, 0, enclosure_placeholder_size[2] + lid_placeholder_size[2] / 2];

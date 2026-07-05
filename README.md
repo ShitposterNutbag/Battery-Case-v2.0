@@ -11,6 +11,7 @@ OpenSCAD scaffold for a custom 6-cell vacuum battery enclosure.
 - `scad/components/battery_holder.scad` — independent battery holder module scaffold.
 - `scad/components/main_pcb.scad` — independent main PCB module scaffold.
 - `scad/components/led_pcb.scad` — independent LED PCB module scaffold.
+- `scad/components/usb_board.scad` — independent USB board module scaffold.
 - `scad/components/enclosure.scad` — intentionally undesigned enclosure placeholder.
 - `scad/components/lid.scad` — intentionally undesigned lid placeholder.
 - `scad/assembly/assembly.scad` — complete assembly scaffold for component integration.

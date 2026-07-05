@@ -13,6 +13,7 @@ placeholder_alpha = 0.35;
 color_battery_holder = "orange";
 color_main_pcb = "forestgreen";
 color_led_pcb = "limegreen";
+color_usb_board = "seagreen";
 color_enclosure = "lightgray";
 color_lid = "silver";
 color_reference = "dodgerblue";

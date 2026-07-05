@@ -4,6 +4,7 @@ use <../components/common.scad>
 use <../components/battery_holder.scad>
 use <../components/main_pcb.scad>
 use <../components/led_pcb.scad>
+use <../components/usb_board.scad>
 use <../components/enclosure.scad>
 use <../components/lid.scad>
 
@@ -22,6 +23,9 @@ module assembly_scaffold() {
 
         translate(led_pcb_position)
             led_pcb();
+
+        translate(usb_board_position)
+            usb_board();
 
         translate(lid_position)
             lid();
