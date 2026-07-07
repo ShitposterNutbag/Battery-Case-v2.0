@@ -24,19 +24,40 @@ The OpenSCAD scaffold now uses verified engineering notebook dimensions for the 
 ### Battery assembly
 
 - Overall battery pack envelope: 68.2 mm length x 64.2 mm width x 45.9 mm total height with boards.
-- Cell count/layout: 6 cells in a 2 row x 3 column arrangement.
+- Cell count/layout: six actual 18650 cells represented as 18 mm x 65 mm cylinders in a 3 column x 2 row arrangement.
 
 ### Main PCB / power board
 
-- Board envelope: 97.0 mm length x 49.8 mm width x 2.0 mm nominal thickness.
+- Board envelope: 55.1 mm length x 20.8 mm width x 2.0 mm nominal thickness.
 - DC jack reference: 9.5 mm opening width x 7.5 mm opening height, 11.4 mm above PCB.
 - Power button reference: 5.9 mm diameter, 6.0 mm above PCB, with near/center/far edge measurements of 41.0 mm / 43.95 mm / 46.9 mm from the measured board edge.
 
 ### LED/control PCB
 
-- Board envelope: 55.1 mm length x 20.8 mm width x 2.0 mm nominal thickness.
+- Board envelope: 29.0 mm length x 20.8 mm width x 2.0 mm nominal thickness.
 - Control button reference: 2.9 mm diameter, 6.0 mm above PCB, with verified near/far edge measurements of 19.2 mm / 34.9 mm from the measured board edge; any rendered midpoint is calculated for approximate reference only.
 - Three-LED array reference: 14.1 mm verified total array length across 3 LEDs, 3.0 mm individual LED width, and 13.8 mm from top of board to bottom of LED package.
+
+
+## Assembly Layout
+
+`scad/assembly/assembly.scad` is a measured-component layout preview only. It shows the intended relationship between the verified battery pack, main PCB/power board, LED/control PCB, and an unverified USB placeholder; it is not final enclosure or mounting geometry.
+
+Coordinate system used by `scad/parameters/enclosure.scad`:
+
+- **X** = left/right across the battery pack width.
+- **Y** = battery pack length direction.
+- **Z** = battery pack height/thickness direction.
+- **Origin** = center of the verified battery pack envelope.
+
+Reference positions in the assembly preview:
+
+- The battery pack/holder placeholder is centered at the origin and remains the assembly datum.
+- The main PCB/power board is placed at the **-Y end** of the battery pack. Its component side is oriented outward so the DC jack and power button face away from the battery pack.
+- The LED/control PCB is placed at the **+Y end** of the battery pack. Its component side is oriented outward so the LED array faces away from the battery pack.
+- The USB charging board remains a size placeholder, but is shown at the **-Y end** with its charging port facing outward.
+
+The enclosure and lid are still placeholders only. This layout does not add or imply shell cutouts, rails, screw bosses, lid clips, exterior styling, or final mount geometry.
 
 ## Preview
 

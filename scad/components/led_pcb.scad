@@ -1,12 +1,12 @@
-include <../parameters/project.scad>
-include <../parameters/electronics.scad>
-use <common.scad>
+include <scad/parameters/project.scad>
+include <scad/parameters/electronics.scad>
+use <scad/components/common.scad>
 
 module led_pcb_placeholder() {
     // Verified board envelope: led_pcb_length x led_pcb_width x led_pcb_thickness_nominal.
     rounded_plate_placeholder(led_pcb_size, led_pcb_corner_radius, color_led_pcb, 0.85);
 
-    // Verified control button diameter/height and edge references; midpoint is calculated for approximate reference rendering only.
+    // Verified control button diameter/height and measured edge references.
     translate([
         -led_pcb_length / 2 + control_button_center_approx_from_board_edge,
         0,

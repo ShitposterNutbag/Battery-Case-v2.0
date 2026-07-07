@@ -1,6 +1,6 @@
-include <../parameters/project.scad>
-include <../parameters/enclosure.scad>
-use <common.scad>
+include <scad/parameters/project.scad>
+include <scad/parameters/enclosure.scad>
+use <scad/components/common.scad>
 
 module enclosure_placeholder() {
     // Intentional placeholder only. Do not treat this as enclosure design geometry.
