@@ -22,5 +22,3 @@ module battery_pack_only() {
             ])
                 battery_pack_cell();
 }
-
-battery_pack_only();
