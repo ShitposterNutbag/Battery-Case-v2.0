@@ -8,16 +8,17 @@ include <../parameters/battery.scad>
 // No geometry is generated from the scan mesh here; it is positioned only as a visual reference
 // around the verified six-cell battery model shown by battery_pack_only().
 //
-// Extracted STL bounds are recorded in scad/parameters/battery.scad. The exact holder-only
-// sub-geometry remains uncertain because the uploaded mesh is a complete scan rather than a
-// separately labeled holder part.
+// Extracted STL bounds and the editable alignment transform are recorded in
+// scad/parameters/battery.scad. The exact holder-only sub-geometry remains uncertain because
+// the uploaded mesh is a complete scan rather than a separately labeled holder part.
 
 module battery_holder_reference_mesh() {
     color(color_battery_holder, battery_holder_reference_alpha)
-        rotate(battery_holder_reference_rotation)
-            scale([battery_holder_reference_scale, battery_holder_reference_scale, battery_holder_reference_scale])
-                translate(-battery_holder_reference_center)
-                    import(battery_holder_reference_file, convexity = 10);
+        translate(battery_holder_reference_translation)
+            rotate(battery_holder_reference_rotation)
+                scale([battery_holder_reference_scale, battery_holder_reference_scale, battery_holder_reference_scale])
+                    translate(-battery_holder_reference_anchor)
+                        import(battery_holder_reference_file, convexity = 10);
 }
 
 module battery_holder() {

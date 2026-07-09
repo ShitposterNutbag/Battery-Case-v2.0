@@ -44,9 +44,14 @@ battery_holder_reference_max = [0.026308005675673485, 0.10483654588460922, 0.062
 battery_holder_reference_center = (battery_holder_reference_min + battery_holder_reference_max) / 2;
 battery_holder_reference_size = (battery_holder_reference_max - battery_holder_reference_min) * battery_holder_reference_scale;
 
-// Orientation is intentionally neutral until a holder-only datum is identified in the scan.
-// The imported mesh is centered on the verified battery-cell preview as a transparent reference.
-battery_holder_reference_rotation = [0, 0, 0];
+// Alignment transform for 7_5_2026.stl.
+// The DAE export declares Y_UP, so source Y is treated as vertical. The scan
+// bounding extents identify source Z as the pack long axis and source X as the
+// pack width axis. Rotating +90 degrees about X maps source Y to model Z and
+// source Z to the model battery long axis.
+battery_holder_reference_anchor = battery_holder_reference_center;
+battery_holder_reference_rotation = [90, 0, 0];
+battery_holder_reference_translation = [0, 0, 0];
 
 // The measured battery envelope remains the verified pack reference. The uploaded scan is visual
 // reference only, and holder-only wall/floor/corner dimensions remain uncertain until separable
