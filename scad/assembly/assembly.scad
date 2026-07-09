@@ -1,35 +1,8 @@
-include <../parameters/project.scad>
-include <../parameters/enclosure.scad>
-use <../components/common.scad>
+use <battery_pack_only.scad>
 use <../components/battery_holder.scad>
-use <../components/main_pcb.scad>
-use <../components/led_pcb.scad>
-use <../components/usb_board.scad>
-use <../components/enclosure.scad>
-use <../components/lid.scad>
 
-module assembly_scaffold() {
-    if (show_axes)
-        reference_axes(35);
+// Active preview: verified six-cell battery pack seated in the plastic holder only.
+// Outer enclosure, lid, PCBs, USB board, buttons, LEDs, and rails are intentionally omitted.
 
-    if (show_placeholders) {
-        enclosure();
-
-        translate(battery_holder_position)
-            battery_holder();
-
-        translate(main_pcb_position)
-            main_pcb();
-
-        translate(led_pcb_position)
-            led_pcb();
-
-        translate(usb_board_position)
-            usb_board();
-
-        translate(lid_position)
-            lid();
-    }
-}
-
-assembly_scaffold();
+battery_holder();
+battery_pack_only();
