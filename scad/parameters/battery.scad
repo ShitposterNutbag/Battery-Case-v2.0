@@ -15,10 +15,10 @@ cell_count = battery_cell_count;
 cell_columns = battery_layout_columns;
 cell_rows = battery_layout_rows;
 
-// Placeholder individual-cell reference dimensions/spacing; pack envelope above is verified.
-cell_diameter = 18.5;
-cell_length = 65.5;
-cell_clearance = 0.5;
+// Verified 18650 cell reference dimensions and spacing.
+cell_diameter = 18;
+cell_length = 65;
+cell_clearance = 0;
 cell_spacing_x = cell_diameter;
 cell_spacing_z = cell_diameter;
 cell_spacing = cell_spacing_x;
